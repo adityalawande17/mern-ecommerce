@@ -1,0 +1,436 @@
+.cart-items {
+  border-radius: 50%;
+  background-color: rgb(20, 158, 105);
+  font-weight: 700;
+  color: aliceblue;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.product-details {
+  text-align: center;
+}
+
+.product-details button {
+  margin: 5px;
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-details button:hover {
+  background-color: #218838;
+}
+
+.item-card {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.filter-btn {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filter-btn button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.prdt-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-num {
+  margin-bottom: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.ecom {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+
+/* Existing styles remain, add these */
+
+/* Modern Product Card Hover Effects */
+/* Product Card - Minimal CSS */
+.product-card {
+  /* Most styling is now inline - only keep essentials here */
+  transition: all 0.3s ease;
+}
+
+.product-image {
+  /* Let inline styles handle most properties */
+}
+
+/* Modern Button Styles */
+.product-details button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-details button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.product-details button:active {
+  transform: translateY(0);
+}
+
+/* Glassmorphism Effect for Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Modern Badge for Cart */
+/* .cart-items {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+  font-weight: 700;
+  color: aliceblue;
+  width: 25px;
+  height: 25px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  animation: pulse 2s infinite;
+} */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Smooth Page Transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Skeleton Effect */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Improved Filter Buttons */
+.filter-btn button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.filter-btn button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+.filter-btn input {
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.filter-btn input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Modern Grid Layout */
+.item-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  list-style: none;
+  padding: 40px 20px;
+  justify-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .item-card {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar-items {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  .product-card {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #fff;
+  }
+
+  .header {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+/* Fix Cart Badge Position */
+.cart-num {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.cart-items {
+  border-radius: 50%;
+  background: linear-gradient(135deg, #20c997 0%, #17a2b8 100%);
+  font-weight: 700;
+  color: aliceblue;
+  width: 25px;
+  height: 25px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Category Filter Responsive */
+@media (max-width: 768px) {
+  .prdt-list h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.prdt-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+}
+/* Dark Mode Global Styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.prdt-list {
+  transition: background-color 0.3s ease;
+}
+
+/* Update search input for dark mode */
+.header input[type="text"] {
+  transition: all 0.3s ease;
+}
+/* Product Card Shine Effect on Hover */
+.product-card:hover .shine-effect,
+div:hover .shine-effect {
+  opacity: 1 !important;
+  left: 150% !important;
+  top: 150% !important;
+}
+
+/* Product Card Hover Glow */
+.product-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(40, 167, 69, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+}
+
+/* Smooth image zoom on hover */
+.product-card img {
+  transition: transform 0.4s ease-in-out;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+/* Force product card styles - override everything */
+.product-card[style] {
+  background-color: var(--card-bg) !important;
+  border: var(--card-border) !important;
+  box-shadow: var(--card-shadow) !important;
+}
+
+/* Remove all hover effects */
+.product-card:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+  border-color: inherit !important;
+}
+
+.product-card::before,
+.product-card::after {
+  display: none !important;
+}
+
+.product-image:hover {
+  transform: none !important;
+  filter: none !important;
+}
