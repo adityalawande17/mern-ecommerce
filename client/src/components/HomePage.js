@@ -19,32 +19,36 @@ const Home = () => {
       title: "Electronics Sale",
       subtitle: "Up to 50% OFF",
       color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      icon: "💻",
       link: "/products?category=Electronics",
+      image:
+        "https://images.pexels.com/photos/6791447/pexels-photo-6791447.jpeg",
     },
     {
       id: 2,
       title: "Fashion Week",
       subtitle: "Trending Styles",
       color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-      icon: "👕",
       link: "/products?category=Fashion",
+      image:
+        "https://images.pexels.com/photos/19109061/pexels-photo-19109061.jpeg",
     },
     {
       id: 3,
       title: "Mobile Bonanza",
       subtitle: "Best Deals",
       color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      icon: "📱",
       link: "/products?category=Mobiles",
+      image:
+        "https://images.pexels.com/photos/34190304/pexels-photo-34190304.jpeg",
     },
     {
       id: 4,
       title: "Home Decor",
       subtitle: "Save Big",
       color: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-      icon: "🏠",
       link: "/products?category=Home",
+      image:
+        "https://images.pexels.com/photos/30260895/pexels-photo-30260895.jpeg",
     },
   ];
 
@@ -87,18 +91,26 @@ const Home = () => {
         >
           {dealBanners.map((banner) => (
             <div
+              div
               key={banner.id}
               onClick={() => navigate(banner.link)}
               style={{
-                background: banner.color,
+                backgroundImage: `
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url(${banner.image})
+    `,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
                 borderRadius: "15px",
                 padding: "30px 20px",
                 textAlign: "center",
                 cursor: "pointer",
                 boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
                 transition: "all 0.3s ease",
-                position: "relative",
-                overflow: "hidden",
+                minHeight: "220px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-8px)";
@@ -111,30 +123,12 @@ const Home = () => {
                   "0 4px 15px rgba(0, 0, 0, 0.2)";
               }}
             >
-              <div style={{ fontSize: "3rem", marginBottom: "10px" }}>
-                {banner.icon}
-              </div>
-              <h3
-                style={{
-                  color: "white",
-                  fontSize: "1.3rem",
-                  fontWeight: "700",
-                  margin: "0 0 5px 0",
-                  textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
-                }}
-              >
+              <h3 style={{ color: "white", fontWeight: "700" }}>
                 {banner.title}
               </h3>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  margin: 0,
-                  opacity: 0.9,
-                }}
-              >
-                {banner.subtitle}
-              </p>
+
+              <p style={{ color: "white", opacity: 0.9 }}>{banner.subtitle}</p>
+
               <button
                 style={{
                   marginTop: "15px",
@@ -145,7 +139,6 @@ const Home = () => {
                   borderRadius: "20px",
                   fontWeight: "600",
                   cursor: "pointer",
-                  fontSize: "0.9rem",
                 }}
               >
                 Shop Now
