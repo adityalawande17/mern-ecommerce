@@ -32,7 +32,7 @@ const Register = () => {
           name,
           email,
           password,
-        }
+        },
       );
 
       // Store token in localStorage
@@ -44,7 +44,7 @@ const Register = () => {
       navigate("/");
     } catch (err) {
       setError(
-        err.response?.data?.message || "Registration failed. Please try again."
+        err.response?.data?.message || "Registration failed. Please try again.",
       );
     }
   };
@@ -74,7 +74,7 @@ const Register = () => {
               padding: "10px",
               fontSize: "16px",
               borderRadius: "5px",
-              border: "1px solid #ccc",
+              border: "1px solid #4a4949ff",
             }}
           />
         </div>
@@ -92,7 +92,7 @@ const Register = () => {
               padding: "10px",
               fontSize: "16px",
               borderRadius: "5px",
-              border: "1px solid #ccc",
+              border: "1px solid #4a4949ff",
             }}
           />
         </div>
