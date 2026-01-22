@@ -105,7 +105,6 @@ const UserProfile = () => {
         return "#6c757d";
     }
   };
-  // Add these functions before the return statement (around line 100)
 
   const handleAddAddress = () => {
     const userName = localStorage.getItem("userName") || "User";
@@ -270,10 +269,10 @@ const UserProfile = () => {
             onClick={() => navigate("/")}
             style={{
               padding: "12px 25px",
-              backgroundColor: "#28a745",
+              backgroundColor: "#2f3dc4ff",
               color: "white",
               border: "none",
-              borderRadius: "8px",
+              borderRadius: "10px",
               cursor: "pointer",
               fontWeight: "600",
               fontSize: "1rem",

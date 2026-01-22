@@ -110,7 +110,7 @@ const Register = () => {
               padding: "10px",
               fontSize: "16px",
               borderRadius: "5px",
-              border: "1px solid #ccc",
+              border: "1px solid #4a4949ff",
             }}
           />
         </div>
@@ -128,7 +128,7 @@ const Register = () => {
               padding: "10px",
               fontSize: "16px",
               borderRadius: "5px",
-              border: "1px solid #ccc",
+              border: "1px solid #4a4949ff",
             }}
           />
         </div>
@@ -137,7 +137,7 @@ const Register = () => {
           style={{
             width: "100%",
             padding: "10px",
-            backgroundColor: "#28a745",
+            backgroundColor: "#125dddff",
             color: "white",
             border: "none",
             borderRadius: "5px",
