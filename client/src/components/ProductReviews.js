@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import StarRating from "./StarRating";
 import axios from "axios";
@@ -16,13 +16,8 @@ const ProductReviews = ({ productId }) => {
   const [comment, setComment] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("userToken");
-    setIsLoggedIn(!!token);
-    fetchReviews();
-  }, [productId, fetchReviews]);
-
-  const fetchReviews = async () => {
+  // Wrap fetchReviews in useCallback
+  const fetchReviews = useCallback(async () => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/reviews/product/${productId}`,
@@ -39,7 +34,12 @@ const ProductReviews = ({ productId }) => {
     } catch (error) {
       console.error("Error fetching reviews:", error);
     }
-  };
+  }, [productId]); // Only changes when productId changes
+  useEffect(() => {
+    const token = localStorage.getItem("userToken");
+    setIsLoggedIn(!!token);
+    fetchReviews();
+  }, [fetchReviews]);
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();

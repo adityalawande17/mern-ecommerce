@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import ProductItem from "./ProductItem";
 import { itemContext } from "../context/ItemContext";
 import { ThemeContext } from "../context/ThemeContext";
@@ -13,16 +13,19 @@ const ProductList = () => {
   const [selectedPriceRanges, setSelectedPriceRanges] = useState([]);
 
   // Price ranges in rupees
-  const priceRanges = [
-    { id: "range1", label: "₹25 - ₹4,999", min: 25, max: 4999 },
-    { id: "range2", label: "₹5,000 - ₹9,999", min: 5000, max: 9999 },
-    { id: "range3", label: "₹10,000 - ₹19,999", min: 10000, max: 19999 },
-    { id: "range4", label: "₹20,000 - ₹29,999", min: 20000, max: 29999 },
-    { id: "range5", label: "₹30,000 - ₹49,999", min: 30000, max: 49999 },
-    { id: "range6", label: "₹50,000 - ₹74,999", min: 50000, max: 74999 },
-    { id: "range7", label: "₹75,000 - ₹99,999", min: 75000, max: 99999 },
-    { id: "range8", label: "₹1,00,000+", min: 100000, max: Infinity },
-  ];
+  const priceRanges = useMemo(
+    () => [
+      { id: "range1", label: "₹25 - ₹4,999", min: 25, max: 4999 },
+      { id: "range2", label: "₹5,000 - ₹9,999", min: 5000, max: 9999 },
+      { id: "range3", label: "₹10,000 - ₹19,999", min: 10000, max: 19999 },
+      { id: "range4", label: "₹20,000 - ₹29,999", min: 20000, max: 29999 },
+      { id: "range5", label: "₹30,000 - ₹49,999", min: 30000, max: 49999 },
+      { id: "range6", label: "₹50,000 - ₹74,999", min: 50000, max: 74999 },
+      { id: "range7", label: "₹75,000 - ₹99,999", min: 75000, max: 99999 },
+      { id: "range8", label: "₹1,00,000+", min: 100000, max: Infinity },
+    ],
+    [],
+  ); // empty dependency array means this is created once
 
   // Sort options
   const sortOptions = [
