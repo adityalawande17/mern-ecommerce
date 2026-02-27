@@ -1,16 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-  faUser,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { itemContext } from "../context/ItemContext";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Header = () => {
-  const { itemsInCart, totalPrice, searchQuery, setSearchQuery, wishlist } =
+  const { itemsInCart, searchQuery, setSearchQuery, wishlist } =
     useContext(itemContext);
   const { isDarkMode } = useContext(ThemeContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,14 +22,14 @@ const Header = () => {
     }
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userEmail");
-    setIsLoggedIn(false);
-    alert("Logged out successfully");
-    navigate("/login");
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("userToken");
+  //   localStorage.removeItem("userName");
+  //   localStorage.removeItem("userEmail");
+  //   setIsLoggedIn(false);
+  //   alert("Logged out successfully");
+  //   navigate("/login");
+  // };
 
   return (
     <nav

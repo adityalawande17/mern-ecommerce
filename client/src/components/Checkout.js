@@ -1,15 +1,14 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-import { itemContext } from "../context/ItemContext";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 
 const Checkout = ({ cartItems, totalAmount }) => {
   const { isDarkMode } = useContext(ThemeContext);
-  const { clearCart } = useContext(itemContext);
+  // const { clearCart } = useContext(itemContext);
   const [loading, setLoading] = useState(false);
   const [stripePromise, setStripePromise] = useState(null);
-  const [clientSecret, setClientSecret] = useState("");
+  // const [clientSecret, setClientSecret] = useState("");
 
   const userName = localStorage.getItem("userName") || "Guest";
   const userEmail = localStorage.getItem("userEmail") || "guest@example.com";
@@ -18,7 +17,7 @@ const Checkout = ({ cartItems, totalAmount }) => {
   useEffect(() => {
     // Initialize Stripe
     const stripe = loadStripe(
-      "pk_test_51ShQLJJYzMShb3d2fx90Rw5c4PqvFIDY3jdBuUMYNoePdHUNyoLe5zd6zaekgd7TculwQw9upHKS6BZ20ONWTm9O000bfNnTVx"
+      "pk_test_51ShQLJJYzMShb3d2fx90Rw5c4PqvFIDY3jdBuUMYNoePdHUNyoLe5zd6zaekgd7TculwQw9upHKS6BZ20ONWTm9O000bfNnTVx",
     ); // Replace with your key
     setStripePromise(stripe);
   }, []);
@@ -44,10 +43,10 @@ const Checkout = ({ cartItems, totalAmount }) => {
           userId,
           userName,
           userEmail,
-        }
+        },
       );
 
-      setClientSecret(response.data.clientSecret);
+      // setClientSecret(response.data.clientSecret);
 
       // Redirect to Stripe Checkout
       const stripe = await stripePromise;

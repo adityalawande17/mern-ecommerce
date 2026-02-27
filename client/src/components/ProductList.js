@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 import { itemContext } from "../context/ItemContext";
 import { ThemeContext } from "../context/ThemeContext";
@@ -77,13 +77,14 @@ const ProductList = () => {
     getFilteredProducts,
     sortBy,
     selectedPriceRanges,
+    priceRanges,
   ]);
 
   const handlePriceRangeToggle = (rangeId) => {
     setSelectedPriceRanges((prev) =>
       prev.includes(rangeId)
         ? prev.filter((id) => id !== rangeId)
-        : [...prev, rangeId]
+        : [...prev, rangeId],
     );
   };
 

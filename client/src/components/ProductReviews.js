@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import StarRating from "./StarRating";
 import axios from "axios";
@@ -20,19 +20,19 @@ const ProductReviews = ({ productId }) => {
     const token = localStorage.getItem("userToken");
     setIsLoggedIn(!!token);
     fetchReviews();
-  }, [productId]);
+  }, [productId, fetchReviews]);
 
   const fetchReviews = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/reviews/product/${productId}`
+        `http://localhost:5000/api/reviews/product/${productId}`,
       );
       setReviews(response.data.reviews || []);
 
       const userEmail = localStorage.getItem("userEmail");
       if (userEmail) {
         const existingReview = response.data.reviews.find(
-          (r) => r.userEmail === userEmail
+          (r) => r.userEmail === userEmail,
         );
         setUserReview(existingReview);
       }
@@ -115,7 +115,7 @@ const ProductReviews = ({ productId }) => {
   const avgRating =
     totalReviews > 0
       ? (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(
-          1
+          1,
         )
       : 0;
 

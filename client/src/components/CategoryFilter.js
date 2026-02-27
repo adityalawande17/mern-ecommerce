@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { itemContext } from "../context/ItemContext";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -62,20 +62,20 @@ const CategoryFilter = () => {
                   selectedCategory === category.name
                     ? "#28a745"
                     : isDarkMode
-                    ? "#2d2d2d"
-                    : "#ffffff",
+                      ? "#2d2d2d"
+                      : "#ffffff",
                 color:
                   selectedCategory === category.name
                     ? "#ffffff"
                     : isDarkMode
-                    ? "#ffffff"
-                    : "#374151",
+                      ? "#ffffff"
+                      : "#374151",
                 border: `2px solid ${
                   selectedCategory === category.name
                     ? "#28a745"
                     : isDarkMode
-                    ? "#444"
-                    : "#e5e7eb"
+                      ? "#444"
+                      : "#e5e7eb"
                 }`,
                 borderRadius: "12px",
                 cursor: "pointer",

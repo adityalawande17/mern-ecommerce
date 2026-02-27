@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -53,17 +53,25 @@ const Register = () => {
     <div
       style={{
         maxWidth: "400px",
+        maxHeight: "500px",
         margin: "50px auto",
-        padding: "20px",
-        border: "1px solid #ccc",
+        padding: "40px",
+        border: "2px solid #000000",
         borderRadius: "10px",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       }}
     >
-      <h2 style={{ textAlign: "center" }}>Register</h2>
+      <h2 style={{ textAlign: "center", color: "#ffffff", fontSize: "30px" }}>
+        Sign Up
+      </h2>
       {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>Name:</label>
+          <label
+            style={{ display: "block", marginBottom: "5px", color: "#ffffff" }}
+          >
+            Name:
+          </label>
           <input
             type="text"
             value={name}
@@ -79,7 +87,9 @@ const Register = () => {
           />
         </div>
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
+          <label
+            style={{ display: "block", marginBottom: "5px", color: "#ffffff" }}
+          >
             Email:
           </label>
           <input
@@ -97,7 +107,9 @@ const Register = () => {
           />
         </div>
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
+          <label
+            style={{ display: "block", marginBottom: "5px", color: "#ffffff" }}
+          >
             Password:
           </label>
           <input
@@ -115,7 +127,9 @@ const Register = () => {
           />
         </div>
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
+          <label
+            style={{ display: "block", marginBottom: "5px", color: "#ffffff" }}
+          >
             Confirm Password:
           </label>
           <input
@@ -148,7 +162,7 @@ const Register = () => {
           Register
         </button>
       </form>
-      <p style={{ textAlign: "center", marginTop: "20px" }}>
+      <p style={{ textAlign: "center", marginTop: "20px", color: "#ffffff" }}>
         Already have an account?{" "}
         <a href="/login" style={{ color: "#007bff" }}>
           Login here

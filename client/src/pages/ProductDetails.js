@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { itemContext } from "../context/ItemContext";
 import { ThemeContext } from "../context/ThemeContext";
 import ProductReviews from "../components/ProductReviews";
-import StarRating from "../components/StarRating";
 import Header from "../components/Header";
 
 const ProductDetails = () => {
@@ -37,22 +36,18 @@ const ProductDetails = () => {
   ];
 
   useEffect(() => {
-    fetchProductDetails();
-  }, [id]);
-
-  useEffect(() => {
     if (product) {
       const related = products
         .filter((p) => p.category === product.category && p._id !== product._id)
         .slice(0, 4);
       setRelatedProducts(related);
     }
-  }, [product, products, id]);
+  }, [product, products]);
 
-  const fetchProductDetails = async () => {
+  const fetchProductDetails = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/products/${id}`
+        `http://localhost:5000/api/products/${id}`,
       );
       setProduct(response.data);
       setLoading(false);
@@ -60,7 +55,11 @@ const ProductDetails = () => {
       console.error("Error fetching product:", error);
       setLoading(false);
     }
-  };
+  }, [id]); // only changes if id changes
+
+  useEffect(() => {
+    fetchProductDetails();
+  }, [fetchProductDetails]); // safe to include
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {

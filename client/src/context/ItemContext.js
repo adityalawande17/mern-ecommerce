@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 export const itemContext = createContext();
@@ -54,7 +54,7 @@ const CustomItemContext = ({ children }) => {
     // Filter by category
     if (selectedCategory !== "All") {
       filtered = filtered.filter(
-        (product) => product.category === selectedCategory
+        (product) => product.category === selectedCategory,
       );
     }
 
@@ -63,7 +63,7 @@ const CustomItemContext = ({ children }) => {
       filtered = filtered.filter(
         (product) =>
           product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          product.description.toLowerCase().includes(searchQuery.toLowerCase())
+          product.description.toLowerCase().includes(searchQuery.toLowerCase()),
       );
     }
 
@@ -118,7 +118,7 @@ const CustomItemContext = ({ children }) => {
   // Coupon functions
   const applyCoupon = (couponCode) => {
     const coupon = availableCoupons.find(
-      (c) => c.code.toUpperCase() === couponCode.toUpperCase()
+      (c) => c.code.toUpperCase() === couponCode.toUpperCase(),
     );
 
     if (!coupon) {

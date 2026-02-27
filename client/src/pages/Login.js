@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const Login = () => {
         {
           email,
           password,
-        }
+        },
       );
 
       // Store token in localStorage
@@ -30,7 +30,7 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       setError(
-        err.response?.data?.message || "Login failed. Please try again."
+        err.response?.data?.message || "Login failed. Please try again.",
       );
     }
   };

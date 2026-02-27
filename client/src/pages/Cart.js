@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { itemContext } from "../context/ItemContext";
 import { ThemeContext } from "../context/ThemeContext";
@@ -324,7 +324,7 @@ const Cart = () => {
                     >
                       {Math.floor(
                         ((item.price * 1.3 - item.price) / (item.price * 1.3)) *
-                          100
+                          100,
                       )}
                       % off
                     </p>
@@ -661,8 +661,8 @@ const Cart = () => {
                           deliveryFee === 0
                             ? "#28a745"
                             : isDarkMode
-                            ? "#ffffff"
-                            : "#333",
+                              ? "#ffffff"
+                              : "#333",
                         fontWeight: "600",
                       }}
                     >

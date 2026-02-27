@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
 
@@ -153,8 +153,8 @@ const UserProfile = () => {
         addresses.map((addr) =>
           addr.id === editingAddress
             ? { ...addressForm, id: editingAddress }
-            : addr
-        )
+            : addr,
+        ),
       );
       alert("Address updated successfully!");
     } else {
@@ -185,7 +185,7 @@ const UserProfile = () => {
       addresses.map((addr) => ({
         ...addr,
         isDefault: addr.id === addressId,
-      }))
+      })),
     );
     alert("Default address updated!");
   };
@@ -320,8 +320,8 @@ const UserProfile = () => {
                     activeTab === tab.id
                       ? "#28a745"
                       : isDarkMode
-                      ? "#cccccc"
-                      : "#666",
+                        ? "#cccccc"
+                        : "#666",
                   border: "none",
                   borderBottom:
                     activeTab === tab.id
@@ -667,8 +667,8 @@ const UserProfile = () => {
                         border: address.isDefault
                           ? "2px solid #28a745"
                           : isDarkMode
-                          ? "2px solid #444"
-                          : "2px solid #e0e0e0",
+                            ? "2px solid #444"
+                            : "2px solid #e0e0e0",
                         borderRadius: "12px",
                         backgroundColor: isDarkMode ? "#2d2d2d" : "#fafafa",
                         position: "relative",
